@@ -1,0 +1,28 @@
+#section-slideshow .Heading, #section-slideshow .flickity-page-dots {
+    color: #ffffff;
+}
+
+#section-collection-list .CollectionItem .Heading, #section-collection-list .flickity-page-dots {
+    color: #ffffff;
+}
+#section-collection-list .CollectionItem__Link {
+    color: #000;
+    border-color: #ffffff;
+}
+#section-collection-list .CollectionItem__Link:hover {
+    color: #ffffff;
+}
+#section-collection-list .CollectionItem__Link::before {
+    background-color: #ffffff;
+}
+.navbar-fixed {
+	transition:0.4s top cubic-bezier(.3, .73, .3, .74);
+    top: -130px;
+    z-index: 100;
+  	position: fixed;
+    width: 100%;
+}
+
+.navbar-fixed.slideDown {
+    top:0;
+}
