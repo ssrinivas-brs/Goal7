@@ -1,617 +1,234 @@
 <!doctype html>
+<html lang="en" data-bs-theme="auto">
 
-<html lang="en">
 <head>
+  <script src="assets/js/color-modes.js"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/favicon_32x32.png" type="image/png">
-  <title>Spacex | Home :: Spacex</title>
-  <meta name="description" content="Content goes here">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.111.3">
+  <title>Spacex - Using bootstrap version 5</title>
 
-  <!--Open Graph Meta tags-->
-  <meta property="og:title" content="Spacex">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="">
-  <meta property="og:description" content="Content goes here">
-  <meta property="og:image" content="image.png">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
-  <!--Favicon-->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  <!--Stylesheets-->
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
+  <!-- Bootstrap -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    
 
-    <div>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
 
-        <!-- Start: Side Menu -->
-        <section id="sidebar-menu" class="SidebarMenu Drawer Drawer--small Drawer--fromLeft" aria-hidden="true" data-section-id="sidebar-menu" data-section-type="sidebar-menu">
-            <header class="Drawer__Header" data-drawer-animated-left="">
-                <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer" data-drawer-id="sidebar-menu" aria-label="Close navigation">
-                    <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
-                        <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </header>
 
-            <div class="Drawer__Content">
-                <div class="Drawer__Main">
-                    <div class="Drawer__Container">
-                        <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="Sidebar navigation">
-                            <div class="Collapsible">
-                                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">Mens<span class="Collapsible__Plus"></span></button>
+  <!-- Start:Header  -->
 
-                                <div class="Collapsible__Inner">
-                                    <div class="Collapsible__Content">
-                                        <div class="Collapsible"><a href="product-list.html" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Shirts</a></div>
-                                        <div class="Collapsible"><a href="product-list.html" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Outerwear</a></div>
-                                        <div class="Collapsible"><a href="product-list.html" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">View All</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Collapsible">
-                                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">Womens<span class="Collapsible__Plus"></span></button>
+  <header data-bs-theme="black">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/spacex-logo.webp" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item dropdown pe-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown">MENS</a>
+              <div class="dropdown-menu rounded-0" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Shirts</a>
+                <a class="dropdown-item" href="#">Outerwear</a>
+                <a class="dropdown-item" href="#">View All</a>
+              </div>
+            </li>
 
-                                <div class="Collapsible__Inner">
-                                    <div class="Collapsible__Content">
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Shirts</a></div>
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Outerwear</a></div>
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">View All</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Collapsible">
-                                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">Kids<span class="Collapsible__Plus"></span></button>
+            <li class="nav-item dropdown pe-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown">WOMENS</a>
+              <div class="dropdown-menu rounded-0" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Shirts</a>
+                <a class="dropdown-item" href="#">Outerwear</a>
+                <a class="dropdown-item" href="#">View All</a>
+              </div>
+            </li>
 
-                                <div class="Collapsible__Inner">
-                                    <div class="Collapsible__Content">
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Shirts</a></div>
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">Outerwear</a></div>
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">View All</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Collapsible">
-                                <button class="Collapsible__Button Heading u-h6">Accessories<span class="Collapsible__Plus"></span></button>
+            <li class="nav-item dropdown pe-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown">KIDS</a>
+              <div class="dropdown-menu rounded-0" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Shirts</a>
+                <a class="dropdown-item" href="#">Outerwear</a>
+                <a class="dropdown-item" href="#">View All</a>
+              </div>
+            </li>
 
-                                <div class="Collapsible__Inner">
-                                    <div class="Collapsible__Content">
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">View All</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Collapsible">
-                                <button class="Collapsible__Button Heading u-h6">Premium<span class="Collapsible__Plus"></span></button>
+            <li class="nav-item dropdown pe-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown">ACCESSORIES</a>
+              <div class="dropdown-menu rounded-0" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">View All</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown pe-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown">PREMIUM</a>
+              <div class="dropdown-menu rounded-0" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">View All</a>
+              </div>
+            </li>
 
-                                <div class="Collapsible__Inner">
-                                    <div class="Collapsible__Content">
-                                        <div class="Collapsible"><a href="#" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">View All</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
-                        <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary">
-                            <ul class="Linklist Linklist--spacingLoose">
-                                <li class="Linklist__Item">
-                                    <a href="#" class="Text--subdued Link Link--primary">Account</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End: Side Menu -->
+
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" href="#">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Search</a>
+            </li>
+            <li class="nav-item text-uppercase">
+              <a class="nav-link" href="#">Cart(0)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End:Header  -->
+
+
+  <main>
+    <!-- Hero Section -->
+    <div
+      class="bg-black text-secondary px-4 py-5 text-center bg-header d-flex align-items-center justify-content-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-white">SHOP SPACEX</h1>
+
+      </div>
     </div>
-    <div class="Drawer Drawer--fromRight">
-        <div class="Drawer__Header Drawer__Header--bordered Drawer__Container">
-            <span class="Drawer__Title Heading u-h4">Cart</span>
 
-            <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer">
-                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
-                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-                </svg>
-            </button>
+    <!-- Content Section -->
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="py-5">FEATURED PRODUCTS</h2>
         </div>
-
-        <form class="Cart Drawer__Content" action="" method="" novalidate="">
-            <div class="Drawer__Main" data-scrollable=""><p class="Cart__Empty Heading u-h5">Your cart is empty</p></div>
-        </form>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="featureContent">
+            <div class="featuredHoveredImg">
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141458_900x.webp" class="nonHoveredImage img-fluid" />
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141454_900x.webp" class="hoveredImage img-fluid" />
+            </div>
+            <div class="py-4">
+              <h4>SPACEX F9 MODEL</h4>
+              <p>$150.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="featureContent">
+            <div class="featuredHoveredImg">
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141458_900x.webp" class="nonHoveredImage img-fluid" />
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141454_900x.webp" class="hoveredImage img-fluid" />
+            </div>
+            <div class="py-4">
+              <h4>SPACEX F9 MODEL</h4>
+              <p>$150.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-dark btn-lg px-4 me-sm-3 rounded-0 btn-featured">VIEW ALL
+            FEATURED</button>
+        </div>
+      </div>
     </div>
-    <div class="PageContainer">
-        <div>
-            <section id="section-announcement">
-                <div class="AnnouncementBar">
-                    <div class="AnnouncementBar__Wrapper">
-                        <p class="AnnouncementBar__Content Heading">Orders Placed after December 10th are not guaranteed to arrive by Christmas</p>
-                    </div>
-                </div>
-            </section>
-
+    <div class="container-fluid text-center px-0">
+      <div class="d-md-flex">
+        <div class="col-md-4">
+          <div class="featureContent position-relative featureContentDarkbg">
+            <div class="featuredHoveredImg">
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141458_900x.webp" class="nonHoveredImage img-fluid" />
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141454_900x.webp" class="hoveredImage img-fluid" />
+              <a class="categoriesButton btn btn-lg btn-white rounded-0 px-4" href="">
+                <h4>WOMEN'S</h4>
+                <p>VIEW PRODUCT</p>
+              </a>
+            </div>
+          </div>
         </div>
-
-        <!-- Start: Search -->
-        <div>
-            <div id="Search" class="Search">
-                <div class="Search__Inner">
-                    <div class="Search__SearchBar">
-                        <form action="" name="" role="search" class="Search__Form">
-                            <div class="Search__InputIconWrapper">
-                                <span class="hidden-tablet-and-up">
-                                    <svg class="Icon Icon--search" role="presentation" viewBox="0 0 18 17">
-                                        <g transform="translate(1 1)" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                                            <path d="M16 16l-5.0752-5.0752"></path>
-                                            <circle cx="6.4" cy="6.4" r="6.4"></circle>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="hidden-phone">
-                                    <svg class="Icon Icon--search-desktop" role="presentation" viewBox="0 0 21 21">
-                                        <g transform="translate(1 1)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                                            <path d="M18 18l-5.7096-5.7096"></path>
-                                            <circle cx="7.2" cy="7.2" r="7.2"></circle>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </div>
-
-                            <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." autofocus="" />
-
-                        </form>
-
-                        <button class="Search__Close Link Link--primary">
-                            <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
-                                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="Search__Results" aria-hidden="true"></div>
-                </div>
+        <div class="col-md-4">
+          <div class="featureContent position-relative featureContentDarkbg">
+            <div class="featuredHoveredImg">
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141458_900x.webp" class="nonHoveredImage img-fluid" />
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141454_900x.webp" class="hoveredImage img-fluid" />
+              <a class="categoriesButton btn btn-lg btn-white rounded-0 px-4" href="">
+                <h4>MEN'S</h4>
+                <p>VIEW PRODUCT</p>
+              </a>
             </div>
-            <header
-              
-                class="Header Header--logoLeft Header--initialized"
-                id='nav_bar'
-                >
-                <div class="Header__Wrapper">
-                    <div class="Header__FlexItem Header__FlexItem--fill">
-                        <button class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-desk">
-                            <span class="hidden-tablet-and-up">
-                                <svg class="Icon Icon--nav" role="presentation" viewBox="0 0 20 14">
-                                    <path d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z" fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            <span class="hidden-phone">
-                                <svg class="Icon Icon--nav-desktop" role="presentation" viewBox="0 0 24 16">
-                                    <path d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z" fill="currentColor"></path>
-                                </svg>
-                            </span>
-                        </button>
-                        <nav class="Header__MainNav hidden-pocket hidden-lap" aria-label="Main navigation">
-                            <ul class="HorizontalList HorizontalList--spacingExtraLoose">
-                                <li class="HorizontalList__Item">
-                                    <a href="#" class="Heading u-h6">Mens</a>
-                                    <div class="DropdownMenu" aria-hidden="true">
-                                        <ul class="Linklist">
-                                            <li class="Linklist__Item">
-                                                <a href="product-list.html" class="Link Link--secondary">Shirts </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="product-list.html" class="Link Link--secondary">Outerwear </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="product-list.html" class="Link Link--secondary">View All </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="HorizontalList__Item">
-                                    <a href="#" class="Heading u-h6">Womens</a>
-                                    <div class="DropdownMenu" aria-hidden="true">
-                                        <ul class="Linklist">
-                                            <li class="Linklist__Item">
-                                                <a href="#" class="Link Link--secondary">Shirts </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="#" class="Link Link--secondary">Outerwear </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="#" class="Link Link--secondary">View All </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="HorizontalList__Item" >
-                                    <a href="" class="Heading u-h6">Kids</a>
-                                    <div class="DropdownMenu" aria-hidden="true">
-                                        <ul class="Linklist">
-                                            <li class="Linklist__Item">
-                                                <a href="" class="Link Link--secondary">Shirts </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="" class="Link Link--secondary">Outerwear </a>
-                                            </li>
-                                            <li class="Linklist__Item">
-                                                <a href="" class="Link Link--secondary">View All </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="HorizontalList__Item" aria-haspopup="true">
-                                    <a href="" class="Heading u-h6">Accessories</a>
-                                    <div class="DropdownMenu" aria-hidden="true">
-                                        <ul class="Linklist">
-                                            <li class="Linklist__Item">
-                                                <a href="" class="Link Link--secondary">View All </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="HorizontalList__Item" aria-haspopup="true">
-                                    <a href="" class="Heading u-h6">Premium</a>
-                                    <div class="DropdownMenu" aria-hidden="true">
-                                        <ul class="Linklist">
-                                            <li class="Linklist__Item">
-                                                <a href="" class="Link Link--secondary">View All </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="Header__FlexItem Header__FlexItem--logo">
-                        <h1 class="Header__Logo">
-                            <a href="/" class="Header__LogoLink">
-                                <img
-                                    class="Header__LogoImage Header__LogoImage--primary"
-                                    src="assets/images/spacex/SpaceX_logo_white_6eaf0441-42af-4396-974e-d6dc2f8ff45c_160x.png?v=1565646525"                                    
-                                    width="160"
-                                    alt="SpaceX Store"
-                                />
-                            </a>
-                        </h1>
-                    </div>
-
-                    <div class="Header__FlexItem Header__FlexItem--fill">
-                        <nav class="Header__SecondaryNav hidden-phone">
-                            <ul class="HorizontalList HorizontalList--spacingLoose hidden-pocket hidden-lap">
-                                <li class="HorizontalList__Item">
-                                    <a href="#" class="Heading Link Link--primary Text--subdued u-h8">Account</a>
-                                </li>
-                                <li class="HorizontalList__Item">
-                                    <a href="#" class="Heading Link Link--primary Text--subdued u-h8">Search</a>
-                                </li>
-
-                                <li class="HorizontalList__Item">
-                                    <a href="cart.html" class="Heading u-h6" data-hcid="minicart-co" data-hc-sel="minicart-co">Cart (<span class="Header__CartCount">0</span>)</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <a href="" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-desk">
-                            <span class="hidden-tablet-and-up">
-                                <svg class="Icon Icon--search" role="presentation" viewBox="0 0 18 17">
-                                    <g transform="translate(1 1)" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                                        <path d="M16 16l-5.0752-5.0752"></path>
-                                        <circle cx="6.4" cy="6.4" r="6.4"></circle>
-                                    </g>
-                                </svg>
-                            </span>
-                            <span class="hidden-phone">
-                                <svg class="Icon Icon--search-desktop" role="presentation" viewBox="0 0 21 21">
-                                    <g transform="translate(1 1)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                                        <path d="M18 18l-5.7096-5.7096"></path>
-                                        <circle cx="7.2" cy="7.2" r="7.2"></circle>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
-
-                        <a href="" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-desk">
-                            <span class="hidden-tablet-and-up">
-                                <svg class="Icon Icon--cart" role="presentation" viewBox="0 0 17 20">
-                                    <path
-                                        d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z"
-                                        fill="currentColor"
-                                    ></path>
-                                </svg>
-                            </span>
-                            <span class="hidden-phone">
-                                <svg class="Icon Icon--cart-desktop" role="presentation" viewBox="0 0 19 23">
-                                    <path
-                                        d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
-                                        fill="currentColor"
-                                    ></path>
-                                </svg>
-                            </span>
-                            <span class="Header__CartDot"></span>
-                        </a>
-                    </div>
-                </div>
-            </header>
-
+          </div>
         </div>
-        <!-- End: Search -->
-
-        <main id="main" role="main">
-            <!-- Start: Content_for_index -->
-            <div>
-                <section id="section-slideshow">
-                    <div class="Slideshow">
-                        <div class="position-relative">
-                            <img class="Slideshow__Image" src="assets/images/spacex/SpaceX_Store_Header_8bea78f5-04fb-49cd-8fa7-62b9c50b980d_1000x.jpg" alt="" />
-                            <div class="Slideshow__Content Slideshow__Content--middleCenter">
-                                <header class="SectionHeader" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                                    <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Shop SpaceX</h2>
-                                </header>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>                    
-                </section>
-
+        <div class="col-md-4">
+          <div class="featureContent position-relative featureContentDarkbg">
+            <div class="featuredHoveredImg">
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141458_900x.webp" class="nonHoveredImage img-fluid" />
+              <img src="assets/img/SPACE-X-ROCKET-2022-10-1141454_900x.webp" class="hoveredImage img-fluid" />
+              <a class="categoriesButton btn btn-lg btn-white rounded-0 px-4" href="">
+                <h4>ACCESSORIES</h4>
+                <p>VIEW PRODUCT</p>
+              </a>
             </div>
-            <div>
-                <section
-                    class="Section Section--spacingNormal"                    
-                >
-                    <header class="SectionHeader SectionHeader--center">
-                        <div class="Container"><h2 class="SectionHeader__Heading Heading u-h1">Featured Products</h2></div>
-                    </header>
-                    <div class="TabPanel" id="block-1565672775541-0" aria-hidden="false" role="tabpanel">
-                        <div class="ProductListWrapper">
-                            <div class="ProductList ProductList--grid ProductList--removeMargin Grid" data-mobile-count="2" data-desktop-count="2" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                                <div class="Grid__Cell 1/2--phone 1/2--tablet 1/2--lap-and-up">
-                                    <div class="ProductItem">
-                                        <div class="ProductItem__Wrapper">
-                                            <a href="#" class="ProductItem__ImageWrapper">
-                                                <div class="AspectRatio AspectRatio--withFallback" style="max-width: 900px; padding-bottom: 100%; --aspect-ratio: 1;">
-                                                    <img
-                                                        class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
-                                                        data-widths="[200,400,600,700,800,900]"
-                                                        data-sizes="auto"
-                                                        alt="SpaceX Crew-2 Mission Patch"
-                                                        data-image-id="28874766188623"
-                                                        data-srcset="assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_200x.png?v=1636404445 200w, assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_400x.png?v=1636404445 400w, assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_600x.png?v=1636404445 600w, assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_700x.png 700w, assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_800x.png?v=1636404445 800w, assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_900x.png?v=1636404445 900w"
-                                                        sizes="892px"
-                                                        srcset="
-                                                        assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_200x.png 200w,
-                                                        assets/images/spacex/products/Crew-2_missionpatch_UPDATEDcopy_400x.png 400w,
-                                                        assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_600x.png 600w,
-                                                        assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_700x.png 700w,
-                                                        assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_800x.png 800w,
-                                                        assets/images/spacex/Crew-2_missionpatch_UPDATEDcopy_900x.png 900w
-                                                        "
-                                                    />
-                                                    
-                                                </div>
-                                            </a>
-                                            <div class="ProductItem__Info ProductItem__Info--center">
-                                                <h2 class="ProductItem__Title Heading">
-                                                    <a href="">SpaceX Crew-2 Mission Patch</a>
-                                                </h2>
-                                                <div class="ProductItem__PriceList Heading">
-                                                    <span class="ProductItem__Price Price Text--subdued two" data-money-convertible="">
-                                                        <div class="money-details"></div>
-                                                        <span class="money pre-money" data-product-id="6546333925455" style="visibility: visible;">$15.00</span>
-                                                        <div class="money-details"></div>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="Grid__Cell 1/2--phone 1/2--tablet 1/2--lap-and-up">
-                                    <div class="ProductItem">
-                                        <div class="ProductItem__Wrapper">
-                                            <a href="" class="ProductItem__ImageWrapper ProductItem__ImageWrapper--withAlternateImage">
-                                                <div class="AspectRatio AspectRatio--withFallback" style="max-width: 900px; padding-bottom: 100%; --aspect-ratio: 1;">
-                                                    <img
-                                                        class="ProductItem__Image ProductItem__Image--alternate Image--fadeIn lazyautosizes Image--lazyLoaded"                                                        
-                                                        alt="Kid's SpaceX Spacesuit Onesie"                                                      
-                                                        data-srcset="assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_200x.png?v=1631644233 200w, assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_300x.png?v=1631644233 300w, assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_400x.png?v=1631644233 400w, assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_600x.png?v=1631644233 600w, assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_800x.png?v=1631644233 800w, assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_900x.png?v=1631644233 900w"
-                                                        sizes="892px"
-                                                        srcset="
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_200x.png?v=1631644233 200w,
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_300x.png?v=1631644233 300w,
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_400x.png?v=1631644233 400w,
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_600x.png?v=1631644233 600w,
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_800x.png?v=1631644233 800w,
-                                                        assets/images/sapcex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-BACK_900x.png?v=1631644233 900w
-                                                        "
-                                                    />
-                                                    <img
-                                                            class="ProductItem__Image"
-                                                            src="assets/images/spacex/KIDS-11-SPACEDUIT-ONESIE-INFANT-ONESIE-WHITE-GREY-FRONT_600x.png"
-                                                            alt="Kid&#39;s SpaceX Spacesuit Onesie"
-                                                        />
-
-                                                </div>
-                                            </a>
-                                            <div class="ProductItem__Info ProductItem__Info--center">
-                                                <h2 class="ProductItem__Title Heading">
-                                                    <a href="#">Kid's SpaceX Spacesuit Onesie</a>
-                                                </h2>
-                                                <div class="ProductItem__PriceList Heading">
-                                                    <span class="ProductItem__Price Price Text--subdued two" data-money-convertible="">
-                                                        <div class="money-details"></div>
-                                                        <span class="money pre-money" style="visibility: visible;">$45.00</span>
-                                                        <div class="money-details"></div>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Container">
-                            <div class="SectionFooter">
-                                <a href="#" class="Button Button--primary">View all Featured</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div>
-                <section id="section-collection-list" data-section-id="collection-list" data-section-type="collection-list">
-                    <div class="CollectionList CollectionList--grid">
-                        <div class="CollectionItem CollectionItem--expand Carousel__Cell is-selected" data-slide-index="0">
-                            <div
-                                class="CollectionItem__Wrapper CollectionItem__Wrapper--normal"
-                                style="background-image: url(assets/images/spacex/WOMENS-OCCUPY-MARS-T-SHIRT-BLACK-FRONTcopy_png_1x1.png);"
-                            >
-                                <div class="CollectionItem__ImageWrapper">
-                                    <div
-                                        class="CollectionItem__Image Image--contrast Image--zoomOut hide-no-js Image--lazyLoaded"
-                                        style="
-                                            background-position: center center;
-                                            background-image: url('assets/images/spacex/WOMENS-OCCUPY-MARS-T-SHIRT-BLACK-FRONTcopy_png_750x900_crop_center.png?v=1635981083');
-                                        "
-                                        data-optimumx="1.4"
-                                        data-expand="-150"
-                                        data-bgset="assets/images/spacex/WOMENS-OCCUPY-MARS-T-SHIRT-BLACK-FRONTcopy_png_750x900_crop_center.png, assets/images/spacex/WOMENS-OCCUPY-MARS-T-SHIRT-BLACK-FRONTcopy_png_1000x.png 1000w, assets/images/spacex/WOMENS-OCCUPY-MARS-T-SHIRT-BLACK-FRONTcopy_png_1500x.png"
-                                    >
-                                        
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="CollectionItem__Content CollectionItem__Content--bottomLeft">
-                                    <header class="SectionHeader">
-                                        <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Women's</h2>
-
-                                        <div class="SectionHeader__ButtonWrapper"><a href="#" class="CollectionItem__Link Button">View products</a></div>
-                                    </header>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="CollectionItem CollectionItem--expand Carousel__Cell" data-slide-index="1">
-                            <div
-                                class="CollectionItem__Wrapper CollectionItem__Wrapper--normal"
-                                style="background-image: url(assets/images/spacex/MENS-CREW-DRAGON-SCHEMATIC-TSHIRT-GRAY-BACK_1x1.png);"
-                            >
-                                <div class="CollectionItem__ImageWrapper">
-                                    <div
-                                        class="CollectionItem__Image Image--contrast Image--zoomOut hide-no-js Image--lazyLoaded"
-                                        style="
-                                            background-position: center center;
-                                            background-image: url('assets/images/spacex/MENS-CREW-DRAGON-SCHEMATIC-TSHIRT-GRAY-BACK_750x900_crop_center.png');
-                                        "                                                                                
-                                    >
-                                        
-                                    </div>
-
-                                </div>
-
-                                <div class="CollectionItem__Content CollectionItem__Content--bottomLeft">
-                                    <header class="SectionHeader">
-                                        <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Men's</h2>
-
-                                        <div class="SectionHeader__ButtonWrapper"><a href="#" class="CollectionItem__Link Button">View products</a></div>
-                                    </header>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="CollectionItem CollectionItem--expand Carousel__Cell" data-slide-index="2">
-                            <div class="CollectionItem__Wrapper CollectionItem__Wrapper--normal" style="background-image: url(assets/images/spacex/SpaceX_Bottle_Front_1x1.png);">
-                                <div class="CollectionItem__ImageWrapper">
-                                    <div
-                                        class="CollectionItem__Image Image--contrast Image--zoomOut hide-no-js Image--lazyLoaded"
-                                        style="background-position: center center; background-image: url('assets/images/spacex/SpaceX_Bottle_Front_750x900_crop_center.png');"
-
-                                        data-bgset="assets/images/spacex/SpaceX_Bottle_Front_750x900_crop_center.png 750w, assets/images/spacex/SpaceX_Bottle_Front_1000x.png 1000w, assets/images/spacex/SpaceX_Bottle_Front_1500x.png 1500w"
-                                    >
-                                        
-                                    </div>
-                                    <noscript>
-                                        <div
-                                            class="CollectionItem__Image Image--contrast"
-                                            style="background-position: center center; background-image: url(assets/images/spacex/SpaceX_Bottle_Front_1000x.png);"
-                                        ></div>
-                                    </noscript>
-                                </div>
-
-                                <div class="CollectionItem__Content CollectionItem__Content--bottomLeft">
-                                    <header class="SectionHeader">
-                                        <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Accessories</h2>
-
-                                        <div class="SectionHeader__ButtonWrapper"><a href="#" class="CollectionItem__Link Button">View products</a></div>
-                                    </header>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-            <!-- END content_for_index -->
-
-        </main>
-
-        <!--Start: Footer -->
-        <div>
-            <footer id="section-footer" class="Footer Footer--center" role="contentinfo">
-                <div class="Container">
-                    <div class="Footer__Inner">
-                        <div class="Footer__Block Footer__Block--links">
-                            <ul class="Linklist"></ul>
-                        </div>
-                        <div class="Footer__Block Footer__Block--links">
-                            <ul class="Linklist">
-                                <li class="Linklist__Item">
-                                    <a href="#" class="Link Link--primary">FAQs</a>
-                                </li>
-                                <li class="Linklist__Item">
-                                    <a href="#" class="Link Link--primary">Search</a>
-                                </li>
-                                <li class="Linklist__Item">
-                                    <a href="" class="Link Link--primary">Privacy Policy</a>
-                                </li>
-                                <li class="Linklist__Item">
-                                    <a href="" class="Link Link--primary">Terms &amp; Conditions</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="Footer__Aside">
-                        <div class="Footer__Copyright">
-                            <a href="/" class="Footer__StoreName Heading u-h7 Link Link--secondary">© SpaceX Store</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+          </div>
         </div>
-        <!--End: Footer -->
+      </div>
     </div>
-    
 
-    <!--Start: Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js" defer></script>
-    <script src="assets/js/scripts.js"></script>
-    <!-- JavaScript -->
-    <script>
-        $('.main-carousel').flickity({
-            // options
-            cellAlign: 'left',
-            contain: true
-        });
-    </script>
-    <!--End: Scripts -->
+
+    <!-- FOOTER -->
+
+    <footer class="bg-black py-5">
+      <div class="container-fluid">
+        <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+        </ul>
+        <p class="text-body-primary text-center text-md-start">&copy; 2023 Company, Inc</p>
+      </div>
+    </footer>
+
+  </main>
+
+
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
